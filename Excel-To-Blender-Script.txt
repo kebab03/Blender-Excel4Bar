@@ -1,0 +1,19 @@
+import subprocess
+import ensurepip
+import sys
+ensurepip.bootstrap()
+pybin = sys.executable
+subprocess.check_call([pybin, '-m', 'pip', 'install', 'pandas'])
+subprocess.check_call([pybin, '-m', 'pip', 'install', 'openpyxl'])
+subprocess.check_call([pybin, '-m', 'pip', 'install', 'xlrd'])
+pybin = sys.exec_prefix + '/bin/python'
+
+# Upgrade pip using pip itself
+subprocess.check_call([pybin, '-m', 'pip', 'install', '--upgrade', 'pip'])
+subprocess.check_call([pybin, '-m', 'pip', 'install', 'numpy==1.22.2'])
+
+subprocess.check_call([pybin, '-m', 'pip', 'list' ])
+print(555)
+
+
+
